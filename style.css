@@ -1,0 +1,99 @@
+:root {
+    --black-1: #122;
+    --black-2: #233;
+    --black-3: #344;
+    --white-1: #eef;
+    --white-2: #bbc;
+    --white-3: #778;
+    --shadow: #0002;
+}
+html {
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 2rem);
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    gap: 1rem;
+    color: var(--white-1);
+    background-color: var(--black-1);
+}
+section {
+    position: relative;
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--black-2);
+    box-shadow: 0 0.25rem 2rem var(--shadow);
+}
+section.split {
+    display: flex;
+    gap: 1rem;
+}
+.profile-icon {
+    width: 128px;
+    height: 128px;
+    vertical-align: bottom;
+    border-radius: 50%;
+    background-color: var(--black-3);
+    object-fit: cover;
+}
+.thumbnail {
+    width: 256px;
+    vertical-align: bottom;
+    border-radius: 0.25rem;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+}
+section > a.wrapper-link {
+    user-select: none;
+    content: '';
+    position: absolute;
+    display: block;
+    inset: 0;
+    border-radius: 0.5rem;
+    background-color: var(--white-2);
+    opacity: 0;
+    transition: 0.25s;
+}
+section > a.wrapper-link:hover {
+    opacity: 0.1;
+    transition: 0.25s;
+}
+.document > * {
+    margin: 1rem 0;
+    padding: 0;
+}
+.document > *:first-child {
+    margin-top: 0;
+}
+.document > *:last-child {
+    margin-bottom: 0;
+}
+.document p.sub {
+    color: var(--white-3);
+}
+.document ul {
+    margin-left: 1rem !important;
+    padding: 0;
+}
+.document li {
+    margin: 0.25rem 0;
+}
+.document a {
+    color: var(--white-2);
+}
+
+@media screen and (max-width: 720px) {
+    section.split {
+        flex-direction: column;
+    }
+    .thumbnail {
+        width: 100%;
+    }
+}
