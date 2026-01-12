@@ -30,6 +30,7 @@ section {
     border-radius: 0.5rem;
     background-color: var(--black-2);
     box-shadow: 0 0.25rem 2rem var(--shadow);
+    break-inside: avoid;
 }
 section.split {
     display: flex;
@@ -44,6 +45,7 @@ section.split {
     object-fit: cover;
 }
 .thumbnail {
+    flex-shrink: 0;
     width: 256px;
     vertical-align: bottom;
     border-radius: 0.25rem;
@@ -95,5 +97,11 @@ section > a.wrapper-link:hover {
     }
     .thumbnail {
         width: 100%;
+    }
+}
+
+@media print {
+    .thumbnail {
+        width: 50%;
     }
 }
