@@ -6,6 +6,8 @@
     --white-2: #bbc;
     --white-3: #778;
     --shadow: #0002;
+    --profile-icon-size: 256px;
+    --profile-icon-adjust-height: calc(0.5 + 0.5 / 1.4142);
 }
 html {
     margin: 0;
@@ -36,13 +38,30 @@ section.split {
     display: flex;
     gap: 1rem;
 }
+.profile-wallpaper{
+    width: calc(100% + 2rem);
+    margin: -1rem -1rem 1rem -1rem;
+    vertical-align: bottom;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    object-fit: cover;
+    aspect-ratio: 3 / 1;
+}
 .profile-icon {
-    width: 128px;
-    height: 128px;
+    position: relative;
+    width: 0;
+    height: 0;
+}
+.profile-icon > img {
+    position: absolute;
+    top: calc((var(--profile-icon-size) * var(--profile-icon-adjust-height) + 1rem) * -1);
+    left: -1rem;
+    width: var(--profile-icon-size);
+    height: var(--profile-icon-size);
     vertical-align: bottom;
     border-radius: 50%;
-    background-color: var(--black-3);
     object-fit: cover;
+    mask-image: radial-gradient(white 65.7107%, transparent 70.7107%);
 }
 .thumbnail {
     flex-shrink: 0;
@@ -92,6 +111,9 @@ section > a.wrapper-link:hover {
 }
 
 @media screen and (max-width: 720px) {
+    :root {
+        --profile-icon-size: 128px;
+    }
     section.split {
         flex-direction: column;
     }
