@@ -75,9 +75,14 @@ section > a.wrapper-link {
     user-select: none;
     content: '';
     position: absolute;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     inset: 0;
     border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--black-1);
     background-color: var(--white-2);
     opacity: 0;
     transition: 0.25s;
