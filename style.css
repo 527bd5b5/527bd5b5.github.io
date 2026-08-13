@@ -8,6 +8,7 @@
     --shadow: #0002;
     --profile-icon-size: 256px;
     --profile-icon-adjust-height: calc(0.5 + 0.5 / 1.4142);
+    --book-image-size: 192px;
 }
 html {
     margin: 0;
@@ -101,7 +102,11 @@ section > a.wrapper-link:hover {
 .document > *:last-child {
     margin-bottom: 0;
 }
+.document p {
+    text-align: justify;
+}
 .document p.sub {
+    text-align: left;
     color: var(--white-3);
 }
 .document ul {
@@ -114,6 +119,20 @@ section > a.wrapper-link:hover {
 .document a {
     color: var(--white-2);
 }
+section.book-item {
+    min-height: calc(var(--book-image-size) - 4rem);
+    margin-top: 2rem;
+}
+section.book-item > img {
+    position: absolute;
+    width: var(--book-image-size);
+    height: var(--book-image-size);
+    top: -2rem;
+    right: 0;
+}
+section.book-item p {
+    margin-right: var(--book-image-size);
+}
 
 @media screen and (max-width: 720px) {
     :root {
@@ -124,6 +143,10 @@ section > a.wrapper-link:hover {
     }
     .thumbnail {
         width: 100%;
+    }
+    section.book-item p {
+        margin-top: calc(var(--book-image-size) - 3rem) !important;
+        margin-right: 0;
     }
 }
 
