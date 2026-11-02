@@ -12,7 +12,7 @@
             <img class="profile-wallpaper" src="images/wallpaper.jpg" />
             <div>
                 <div class="profile-icon">
-                    <img src="images/icon.png" />
+                    <img src="images/icon.png" onclick="addCount()" />
                 </div>
                 <div class="document">
                     <h1>John次郎 <span style="font-size: 50%">(John Jiro)</span></h1>
@@ -28,6 +28,16 @@
                     </ul>
                 </div>
             </div>
+        </section>
+
+        <section class="split easter-egg">
+            <img class="thumbnail" src="images/BeaconOfBabel.jpg" />
+            <div class="document">
+                <h2>Beacon of Babel</h2>
+
+                <p class="sub">Novel, 2026/11/02, under development</p>
+            </div>
+            <a class="wrapper-link" href="https://drive.google.com/file/d/1kLogWTXJR2kjHpA1yIQsHIMGx0PsOG5g/view" target="_blank">Click to move</a>
         </section>
 
         <section class="split">
@@ -166,5 +176,20 @@
                 <p>Do you want to know my past? Sorry, my past doesn't exist on the internet. If you send me your address via email or meet me in person, I will give you the only book that chronicles my past from 2019 to 2025 (7 copies remaining).</p>
             </div>
         </section>
+
+        <script>
+            let count = 0;
+
+            function addCount() {
+                count++;
+
+                if (count === 5)
+                    Array
+                        .from(document.getElementsByClassName('easter-egg'))
+                        .map((element) =>
+                            element.classList.remove('easter-egg')
+                        );
+            }
+        </script>
     </body>
 </html>
