@@ -54,6 +54,7 @@ section.split {
     height: 0;
 }
 .profile-icon > img {
+    cursor: pointer;
     position: absolute;
     top: calc((var(--profile-icon-size) * var(--profile-icon-adjust-height) + 1rem) * -1);
     left: -1rem;
@@ -132,6 +133,9 @@ section.book-item > img {
 }
 section.book-item p {
     margin-right: var(--book-image-size);
+}
+.easter-egg {
+    display: none !important;
 }
 
 @media screen and (max-width: 720px) {
